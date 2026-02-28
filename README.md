@@ -85,8 +85,8 @@ No se requiere:
 ## 1. Clonar el repositorio
 
 
-git clone <url-del-repositorio>
-cd <nombre-del-repositorio>
+git clone url-del-repositorio
+cd nombre-del-repositorio
 
 
 ## 2. Construir y levantar los contenedores
