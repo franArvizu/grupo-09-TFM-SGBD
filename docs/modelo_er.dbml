@@ -1,0 +1,91 @@
+Table ESTANDAR {
+  estandar_id int [pk, increment]
+  nombre varchar
+  descripcion text
+}
+
+Table ETAPA {
+  etapa_id int [pk, increment]
+  nombre varchar
+  orden int
+}
+
+Table FUENTE {
+  fuente_id int [pk, increment]
+  url varchar
+  dominio varchar
+  tipo_licencia varchar
+}
+
+Table CONCEPTO {
+  concepto_id int [pk, increment]
+  estandar_id int [ref: > ESTANDAR.estandar_id]
+  etapa_id int [ref: > ETAPA.etapa_id]
+  fuente_id int [ref: > FUENTE.fuente_id]
+  nombre_concepto varchar
+  texto text
+  nivel_dificultad int
+  longitud_texto int
+  fecha_creacion timestamp
+}
+
+Table PREGUNTA {
+  pregunta_id int [pk, increment]
+  concepto_id int [ref: > CONCEPTO.concepto_id]
+  enunciado text
+  opcion_a varchar
+  opcion_b varchar
+  opcion_c varchar
+  opcion_d varchar
+  opcion_correcta varchar
+  nivel_dificultad int
+  explicacion text
+}
+
+Table USUARIO {
+  usuario_id int [pk, increment]
+  nombre_usuario varchar
+  correo varchar
+  password_hash varchar
+  fecha_registro timestamp
+}
+
+Table PROGRESO {
+  progreso_id int [pk, increment]
+  usuario_id int [ref: > USUARIO.usuario_id]
+  concepto_id int [ref: > CONCEPTO.concepto_id]
+  estado varchar
+  puntuacion decimal
+  ultima_interaccion timestamp
+  racha int
+}
+
+Table EJECUCION_SPC {
+  ejecucion_id int [pk]
+  proceso_id varchar
+  objetivo decimal
+  limite_inferior decimal
+  limite_superior decimal
+  unidad varchar
+  semilla int
+  fecha_creacion timestamp
+}
+
+Table MEDICION_SPC {
+  medicion_id int [pk, increment]
+  ejecucion_id int [ref: > EJECUCION_SPC.ejecucion_id]
+  subgrupo int
+  valor_medicion decimal
+  fecha_hora timestamp
+}
+
+Table EJERCICIO {
+  ejercicio_id int [pk, increment]
+  usuario_id int [ref: > USUARIO.usuario_id]
+  ejecucion_id int [ref: > EJECUCION_SPC.ejecucion_id]
+  cpk_enviado decimal
+  media_enviada decimal
+  cpk_correcto decimal
+  puntuacion decimal
+  fecha_completado timestamp
+}

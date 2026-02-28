@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "TFM-SPC",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "tfm_db",
+      "Username": "tfm",
+      "SSLMode": "prefer"
+    }
+  }
+}
