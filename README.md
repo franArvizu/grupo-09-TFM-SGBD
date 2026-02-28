@@ -69,6 +69,7 @@ Para ejecutar el entorno es necesario tener instalado:
 
 - Docker Desktop (Windows, macOS o Linux)
 - Docker Compose (incluido en Docker Desktop)
+- Git
 
 Podría requerirse:
 - Instalación local de Python 3
@@ -84,6 +85,7 @@ No se requiere:
 
 ## 1. Clonar el repositorio
 
+Ejecutar en la terminal los comandos:
 
 git clone url-del-repositorio
 
@@ -92,8 +94,9 @@ cd nombre-del-repositorio
 
 ## 2. Construir y levantar los contenedores
 
+Abrir Docker Desktop
 
-docker compose up --build
+Ejecutar en la terminal el comando: docker compose up --build
 
 
 Este comando:
