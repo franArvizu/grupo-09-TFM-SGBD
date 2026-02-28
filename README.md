@@ -208,9 +208,13 @@ El entorno es completamente replicable mediante un único comando Docker, garant
 ### Equipo
 
 Omar Osvaldo — Ingeniería de Manufactura
+
 Juan Carlos — Marketing Digital y Segmentación
+
 Charlyn — Documentación y Redacción
+
 Ana — Análisis de Datos
+
 Francisco — Ingeniería de Sistemas y Desarrollo de Software
 
 ### Licencia
